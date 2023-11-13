@@ -79,25 +79,44 @@ To run this project locally, please follow these steps:-
 
 ## Image
 
-Creating Account:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/b22af42f-9119-4cc0-bab7-dbd3e72a4c28)
+Creating Account Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/275e2596-497b-40b2-833d-3b7142f29beb)
+
+Creating Account Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/da8cb90c-8208-4e9e-a2f1-533edbbc596a)
 
 
-Depositing money:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/9dde0def-b0f4-4f74-ad23-3df6df5685bd)
+Depositing money Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/f6fe3327-63d4-4538-a0cd-0c46cb1fc306)
 
-Withdrawing money:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/d531512e-b0cf-489a-a21d-56f72ffbcb57)
+Depositing Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/1d8bf061-23f0-40a4-b2e3-b24cd37392eb)
 
-Transferring money:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/5b7ff47b-47a2-4e7f-9240-dc036d18076b)
 
-Account Statement:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/c1236781-9003-4a69-ae18-7e85804ea676)
+Withdrawing money Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/33b59a0c-a80e-428f-815e-6b59ba51258a)
 
-Transaction history:
-![image](https://github.com/Rajarshi12321/BankSQL_server/assets/94736350/f8199023-445f-44fc-9664-14b1763dca65)
+Withdrawing Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/e4d3f2d2-b9a8-432a-b770-b65211deb827)
 
+
+Transferring money Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/f150b7d4-8ac9-47bd-bf6e-818eeb373a21)
+
+Transferring money Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/7b1b4331-cbc5-4692-a862-9794d79a4ea5)
+
+Account Statement Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/76b50a50-1096-496c-b37d-13b58363222a)
+
+Account Statement Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/87108d4f-47fe-4b72-ab5f-332c6a388368)
+
+Transaction history Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/a75e268a-923c-4130-b8f6-97865db02106)
+
+Transaction history Redirect Page:
+![image](https://github.com/Rajarshi12321/BankSQL/assets/94736350/86167b9d-60ff-4bc7-a7ab-d7147efcaac6)
 
 
 ## Contributing
