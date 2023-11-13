@@ -54,7 +54,7 @@ MIDDLEWARE = [
 
 # ...
 
-ALLOWED_HOSTS = ['.vercel.app']  # Allow *.vercel.app
+# ALLOWED_HOSTS = ['.vercel.app', "0.0.0.0"]  # Allow *.vercel.app
 
 # ...
 
