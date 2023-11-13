@@ -226,11 +226,12 @@ def history(Request):
 
     if Request.method == "POST":
         # try:
-        ab = Request.POST
         acc_no = Request.POST.get("acc_no")
         start_date = Request.POST.get("start_date")
         end_date = Request.POST.get("end_date")
         limit = int(Request.POST.get("limit"))
+
+        print(acc_no)
 
         deposits = Deposit.objects.filter(
             acc_no=acc_no, date__range=(start_date, end_date))
@@ -248,6 +249,7 @@ def history(Request):
         # transactions.sort(key=lambda x: x.date, reverse=True)
 
         for i in withdrawals:
+            print(i.acc_no)
             demo = Demo.objects.create(
                 # acc_no_reciever=receiver_account,
                 # reciever_name=reciever_name,
@@ -263,6 +265,7 @@ def history(Request):
             demo.save()
 
         for i in deposits:
+            print(i.acc_no)
             demo = Demo.objects.create(
                 acc_no_reciever=get_acc_no(i),
                 reciever_name=i.name,
@@ -277,6 +280,7 @@ def history(Request):
             demo.save()
 
         for i in transfers:
+            # print(i.acc_no)
             demo = Demo.objects.create(
                 acc_no_reciever=get_acc_no(i.acc_no_receiver),
                 reciever_name=i.receiver_name,
@@ -308,6 +312,7 @@ def history(Request):
             context = {
                 "details_list": sorted_demo
             }
+            Demo.objects.all().delete()
 
             return render(Request, "History redirect.html", context)
 
@@ -322,6 +327,8 @@ def history(Request):
             context = {
                 "details_list": sorted_demo[:limit]
             }
+
+            Demo.objects.all().delete()
 
             return render(Request, "History redirect.html", context)
 
