@@ -3,6 +3,8 @@ from django.urls import path
 from mybankSQL import views
 
 urlpatterns = [
+    # path('', include('example.urls')),
+
     path("", views.index, name="index"),
     path("acc_create", views.create_acc, name="create_acc"),
     path("deposit", views.deposit, name="deposit"),

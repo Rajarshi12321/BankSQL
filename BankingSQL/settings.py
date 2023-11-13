@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'example',
+
     "mybankSQL.apps.MybanksqlConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -49,6 +51,16 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# ...
+
+ALLOWED_HOSTS = ['.vercel.app']  # Allow *.vercel.app
+
+# ...
+
+DATABASES = {}  # Prevent Django from loading an adapter
+
+# ...
 
 ROOT_URLCONF = "BankingSQL.urls"
 
