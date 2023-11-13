@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'example',
+    # 'example',
 
     "mybankSQL.apps.MybanksqlConfig",
     "django.contrib.admin",
