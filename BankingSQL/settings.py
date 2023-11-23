@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +25,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-b59@ozj+$2s(!d@nf53%ynq64*!hkp4em0=b4zletza7b%tjk@"
+SECRET_KEY = os.getenv("KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+
+# at the top of file
+
+
+# At the end of file. add these lines
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Also Make aure To set allowed_hosts to '*'
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,11 +72,11 @@ MIDDLEWARE = [
 
 # ...
 
-ALLOWED_HOSTS = ['.vercel.app', "0.0.0.0"]  # Allow *.vercel.app
+# ALLOWED_HOSTS = ['.vercel.app', "0.0.0.0"]  # Allow *.vercel.app
 
 # ...
 
-DATABASES = {}  # Prevent Django from loading an adapter
+# DATABASES = {}  # Prevent Django from loading an adapter
 
 # ...
 
@@ -89,10 +107,32 @@ WSGI_APPLICATION = "BankingSQL.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "USER": os.getenv("USER"),
+        "NAME": os.getenv("NAME"),
+        "HOST": os.getenv("HOST"),
+        "PASSWORD": os.getenv("PASSWORD"),
+        "PORT": os.getenv("PORT"),
     }
 }
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "USER": os.getenv("USER"),
+#         "NAME": os.getenv("NAME"),
+#         "HOST": os.getenv("HOST"),
+#         "PASSWORD": os.getenv("PASSWORD"),
+#         "PORT": os.getenv("PORT"),
+#     }
+# }
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -130,9 +170,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

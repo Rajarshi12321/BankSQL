@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+
+# SQL servers
+postgres
+sql12664540
 # Distribution / packaging
 .Python
 build/

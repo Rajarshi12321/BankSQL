@@ -72,7 +72,7 @@ def deposit(Request):
                 "acc_no": acc_no,
                 "transaction_no": transaction_id,
                 "deposited_amt": amount,
-                "balance": balance
+                "balance": account.balance
             }
 
             return render(Request, "Deposit redirect.html", context)
@@ -117,7 +117,7 @@ def withdraw(Request):
                     "acc_no": acc_no,
                     "transaction_no": transaction_id,
                     "withdrawl_amt": amount,
-                    "balance": balance
+                    "balance": account.balance
                 }
                 deposit.save()
 

@@ -8,39 +8,39 @@ import string
 
 class Account(models.Model):
     acc_no = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=25)
-    father_name = models.CharField(max_length=25)
-    mother_name = models.CharField(max_length=25)
-    dob = models.DateField()
-    balance = models.IntegerField()
+    name = models.CharField(max_length=25, null=True, blank=True)
+    father_name = models.CharField(max_length=25, null=True, blank=True)
+    mother_name = models.CharField(max_length=25, null=True, blank=True)
+    dob = models.DateField(null=True, blank=True)
+    balance = models.IntegerField(null=True, blank=True)
 
 
 class Deposit(models.Model):
     acc_no = models.ForeignKey(Account, on_delete=models.CASCADE)
-    name = models.CharField(max_length=25)
-    date = models.DateField()
-    amount = models.IntegerField()
-    transaction_id = models.CharField(max_length=30)
+    name = models.CharField(max_length=25, null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
+    amount = models.IntegerField(null=True, blank=True)
+    transaction_id = models.CharField(max_length=30, null=True, blank=True)
 
 
 class Withdrawal(models.Model):
     acc_no = models.ForeignKey(Account, on_delete=models.CASCADE)
-    name = models.CharField(max_length=25)
-    date = models.DateField()
-    amount = models.IntegerField()
-    transaction_id = models.CharField(max_length=30)
+    name = models.CharField(max_length=25, null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
+    amount = models.IntegerField(null=True, blank=True)
+    transaction_id = models.CharField(max_length=30, null=True, blank=True)
 
 
 class Transfer(models.Model):
     acc_no_receiver = models.ForeignKey(
-        Account, on_delete=models.CASCADE, related_name='receiver')
-    receiver_name = models.CharField(max_length=25)
+        Account, on_delete=models.CASCADE, related_name='receiver', null=True, blank=True)
+    receiver_name = models.CharField(max_length=25, null=True, blank=True)
     acc_no_sender = models.ForeignKey(
-        Account, on_delete=models.CASCADE, related_name='sender')
-    sender_name = models.CharField(max_length=25)
-    amount = models.IntegerField()
-    date = models.DateField()
-    transaction_id = models.CharField(max_length=30)
+        Account, on_delete=models.CASCADE, related_name='sender', null=True, blank=True)
+    sender_name = models.CharField(max_length=25, null=True, blank=True)
+    amount = models.IntegerField(null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
+    transaction_id = models.CharField(max_length=30, null=True, blank=True)
 
 
 class TransactionID(models.Model):
@@ -72,7 +72,8 @@ class Demo(models.Model):
     reciever_name = models.CharField(max_length=20, null=True, blank=True)
     acc_no_sender = models.IntegerField(null=True, blank=True)
     sender_name = models.CharField(max_length=20, null=True, blank=True)
-    Balance = models.IntegerField()
-    Date = models.DateField()
-    TID = models.CharField(max_length=30)
-    transaction_category = models.CharField(max_length=20)
+    Balance = models.IntegerField(null=True, blank=True)
+    Date = models.DateField(null=True, blank=True)
+    TID = models.CharField(max_length=30, null=True, blank=True)
+    transaction_category = models.CharField(
+        max_length=20, null=True, blank=True)
