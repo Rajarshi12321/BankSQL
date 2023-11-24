@@ -107,7 +107,7 @@ WSGI_APPLICATION = "BankingSQL.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
         "USER": os.getenv("USER"),
         "NAME": os.getenv("NAME"),
         "HOST": os.getenv("HOST"),

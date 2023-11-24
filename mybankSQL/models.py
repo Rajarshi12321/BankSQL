@@ -19,7 +19,7 @@ class Deposit(models.Model):
     acc_no = models.ForeignKey(Account, on_delete=models.CASCADE)
     name = models.CharField(max_length=25, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
-    amount = models.IntegerField(null=True, blank=True)
+    amount = models.IntegerField(null=True, blank=True, default="0")
     transaction_id = models.CharField(max_length=30, null=True, blank=True)
 
 
@@ -63,7 +63,7 @@ class AccountID(models.Model):
     def generate_account_id(cls):
         while True:
             acc_no = ''.join(random.choices(string.digits, k=9))
-            if not cls.objects.filter(acc_no=acc_no).exists():
+            while cls.objects.filter(acc_no=acc_no).exists() != True:
                 return acc_no
 
 

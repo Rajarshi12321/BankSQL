@@ -31,6 +31,12 @@ def create_acc(Request):
                           father_name=f_name, mother_name=m_name, dob=dob, balance=amount)
         account.save()
 
+        # Create an instance of AccountID with the generated ID
+        account_instance = AccountID(acc_no=acc_no)
+
+        # Save the instance to the database
+        account_instance.save()
+
         context = {
             "acc_no": acc_no,
             "name": main_name,
@@ -58,6 +64,12 @@ def deposit(Request):
 
             # print(account["acc_no"])
             transaction_id = TransactionID.generate_transaction_id()
+
+            # Create an instance of TransactionID with the generated ID
+            transaction_instance = TransactionID(transaction_id=transaction_id)
+
+            # Save the instance to the database
+            transaction_instance.save()
 
             deposit = Deposit(acc_no=account,
                               name=name,
@@ -101,6 +113,13 @@ def withdraw(Request):
             if balance >= amount:
 
                 transaction_id = TransactionID.generate_transaction_id()
+
+                # Create an instance of TransactionID with the generated ID
+                transaction_instance = TransactionID(
+                    transaction_id=transaction_id)
+
+                # Save the instance to the database
+                transaction_instance.save()
 
                 # Insert into Withdrawal model
                 deposit = Withdrawal(acc_no=account,
@@ -156,6 +175,13 @@ def transfer(Request):
                 acc_no=reciever_acc_no, name=reciever_name)
 
             transaction_id = TransactionID.generate_transaction_id()
+
+            # Create an instance of TransactionID with the generated ID
+            transaction_instance = TransactionID(
+                transaction_id=transaction_id)
+
+            # Save the instance to the database
+            transaction_instance.save()
 
             # Insert into Transfer model
             transfer = Transfer.objects.create(
