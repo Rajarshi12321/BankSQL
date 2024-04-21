@@ -37,20 +37,19 @@ DEBUG = True
 
 # At the end of file. add these lines
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-MEDIA_URLS = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+MEDIA_URLS = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Also Make aure To set allowed_hosts to '*'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     # 'example',
-
     "mybankSQL.apps.MybanksqlConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -72,8 +71,13 @@ MIDDLEWARE = [
 
 # ...
 
-ALLOWED_HOSTS = ['.vercel.app', ".now.sh", "0.0.0.0",
-                 "localhost", "127.0.0.1"]  # Allow *.vercel.app
+ALLOWED_HOSTS = [
+    ".vercel.app",
+    ".now.sh",
+    "0.0.0.0",
+    "localhost",
+    "127.0.0.1",
+]  # Allow *.vercel.app
 
 # ...
 
@@ -104,6 +108,7 @@ WSGI_APPLICATION = "BankingSQL.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# no
 
 DATABASES = {
     "default": {
